@@ -1,0 +1,22 @@
+####Docente
+#Detalhes pessoais
+Numero
+Nome
+Data de nasc
+Sexo
+Formacao
+Linguas faladas
+Bio
+
+#Contact
+Email
+Telemovel 1/2
+Endereco
+
+#Horarios
+
+####Considerar
+Ratings
+Numero de alunos por turma
+
+Admin = $2y$10$x7rFPISGJ0jEc4CdrN/x6OCTcqelAt3Eup9YIb1DhxiCG3koyzQEC

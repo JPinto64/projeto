@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Models\dadospessoa;
+
 
 class PersonalDataController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request):View
     {
         return view('dadospessoais');
     }
@@ -24,18 +27,16 @@ class PersonalDataController extends Controller
         ]);
 
         // Guardar na base de dados usando um modelo
-        $dadopessoal = new PersonalData();
+        $dadopessoal = new dadospessoa();
         $dadopessoal->nome = $dadosValidados['nome'];
-        $dadopessoal->birthdate = $dadosValidados['data_nascimento'];
+        $dadopessoal->data_nascimento = $dadosValidados['data_nascimento'];
         $dadopessoal->email = $dadosValidados['email'];
         $dadopessoal->morada = $dadosValidados['morada'];
-        $dadopessoal->codigo_postal = $dadosValidados['cod_postal'];
-
+        $dadopessoal->cod_postal = $dadosValidados['cod_postal'];
 
         $dadopessoal->save();
-
         // Redirecione o usuário para uma página de confirmação ou outra página de sua escolha
-        return redirect()->route('home')->with('success', 'Dados pessoais salvos com sucesso!');
+        return redirect('/home')->with('success', 'Dados pessoais salvos com sucesso!');
 
     }
 }

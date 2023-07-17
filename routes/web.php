@@ -1,8 +1,20 @@
 <?php
 
+use App\Http\Controllers\AulaAlunoController;
+use App\Http\Controllers\AulaController;
+use App\Http\Controllers\CobrancaController;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\PersonalDataController;
+use App\Http\Controllers\PagamentoController;
+use App\Http\Controllers\CompeticaoController;
+use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TutorController;
+use App\Http\Controllers\AlunoController;
+use App\Models\Aluno;
+use App\Http\Controllers\CompeticaoAlunoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +25,92 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+    //Route::view('/', 'index');
 
+    /* links do menu principal */
+    //Adicionado roteamento para pagina inicial (home)
+    Route::view('home', 'home');
+    Route::view('dadospessoais', 'dadospessoais');
+    Route::view('pag_ini', 'pag_ini');
+    Route::view('dadoscurriculares', 'dadoscurriculares');
+    Route::view('horario', 'horario');
+    Route::view('avaliacao', 'avaliacao');
+
+
+    Route::get('dadospessoais', [PersonalDataController::class, 'index'])->name('dadospessoais');
+    Route::post('/dadospessoais', [PersonalDataController::class, 'dadospessoa'])->name('dadospessoa');
+
+    Route::get('/pagamento', [PagamentoController::class, 'index'])->name('pagamento');
+    Route::post('/pagamento', [PagamentoController::class, 'efetuarPagamento'])->name('efetuar-pagamento');
+
+
+    Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao');
+    Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
+
+//######################## Administradores
+    Route::resource('tutores', TutorController::class)->parameters([
+        'tutores' => 'tutor',
+    ])->middleware('administradores.group.access');
+
+    Route::resource('alunos', AlunoController::class)->parameters([
+        'alunos' => 'aluno',
+    ])->middleware('administradores.group.access');
+
+    Route::resource('users', UserController::class)->parameters([
+        'users' => 'user',
+    ])->middleware('administradores.group.access');
+
+    Route::resource('aulas', AulaController::class)->parameters([
+        'aulas' => 'aula',
+    ]);//->middleware([App\Http\Middleware\AdministradoresGroupAccessMiddleware::class,TutoresGroupAccessMiddleware::class]);
+
+
+    Route::resource('cobrancas', CobrancaController::class)->parameters([
+        'cobrancas' => 'cobranca',
+    ])->middleware('administradores.group.access');
+
+    Route::resource('competicoes', CompeticaoController::class)->parameters([
+        'competicoes' => 'competicao',
+    ])->middleware('administradores.group.access');
+    ;
+
+//######################## Alunos
+    Route::resource('aulasalunos', AulaAlunoController::class)->parameters([
+        'aulasalunos' => 'aulaaluno',
+    ])->middleware('alunos.group.access');
+
+    Route::resource('competicoesalunos', CompeticaoAlunoController::class)->parameters([
+        'competicoesalunos' => 'competicaoaluno',
+    ])->middleware('alunos.group.access');
+
+
+    Route::get('/', [HomePageController::class, 'index']);
+
+   /* //Pagina inicial redirecionada para formulario de dados pessoais
+    Route::get('/', function () {
+        return redirect()->route('dadospessoais');
+    });
+*/
+    Route::get('/avaliacao-tecnica', function () {
+        return view('avaliacao.tecnica');
+    })->name('avaliacao-tecnica');
+
+    Route::get('/avaliacao-fisica', function () {
+        return view('avaliacao.fisica');
+    })->name('avaliacao-fisica');
+
+    Route::get('/avaliacao-desempenho', function () {
+        return view('avaliacao.desempenho');
+    })->name('avaliacao-desempenho');
+
+
+
+
+ /*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,16 +122,6 @@ Route::middleware('auth')->group(function () {
 
 });
 
-    Route::view('/', 'index');
-    /* links do menu pricncipal */
-    Route::view('dadospessoais', 'dadospessoais');
-    Route::view('pag_ini', 'pag_ini');
-    Route::view('dadoscurriculares', 'dadoscurriculares');
-    Route::view('horario', 'horario');
-    Route::view('pagamentos', 'pagamentos');
-    Route::view('competicoes', 'competicoes');
-    Route::view('avaliacoes', 'avaliacoes');
-    Route::view('teste', 'teste');
-    Route::post('/dadospessoais', [PersonalDataController::class, 'dadospessoa'])->name('dadospessoa');
+
 
 require __DIR__.'/auth.php';

@@ -1,0 +1,51 @@
+php artisan make:migration create_tutores_table
+php artisan migrate
+php artisan make:model Tutor --controller --resource --requests
+php artisan make:controller TutorController --resource --model=Tutor
+php artisan make:view tutores.create
+php artisan make:migration tutores_v2 --table=tutores
+php artisan migrate
+php artisan route:cache
+ php artisan route:list
+ 
+ 
+ php artisan make:migration create_alunos_table
+ php artisan make:migration add_user_foreign_key_to_tutores_table
+ 
+ php artisan migrate
+ 
+ php artisan make:controller AlunoController --resource --model=Aluno
+ 
+ php artisan make:migration add_column_table_alunos_data_inscricao
+ 
+ php artisan make:migration recreate_alunos_table
+ php artisan migrate
+ 
+ php artisan make:middleware GroupAccessMiddleware
+ 
+ 
+ php artisan make:migration add_column_table_users_usergroup
+ php artisan migrate
+ php artisan route:cache
+ 
+ 
+ php artisan make:migration create_aulas_table
+ php artisan migrate
+ 
+ php artisan make:migration create_cobrancas_table
+ php artisan make:controller CobrancaController --resource --model=Cobranca
+ php artisan migrate
+ php artisan route:cache
+ php artisan make:migration create_aula_aluno_table
+ php artisan make:controller AulaAlunoController --resource --model=AulaAluno
+ 
+ php artisan make:controller HomePageController
+ 
+ php artisan make:migration create_competicoes_table
+ php artisan migrate
+ 
+ php artisan make:migration create_competicoes_alunos_table --create=competicoes_alunos
+ php artisan migrate
+ php artisan make:model CompeticaoAluno
+ 
+ 

@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layouts.app')
 
 @section('menu')
     @parent
@@ -15,14 +15,15 @@
 @endif
 
 @section('conteudo')
+
     <h2>Dados Pessoais</h2>
     <form action="{{ route('dadospessoa') }}" method="POST">
         @csrf
         <label for="nome">Nome:</label>
-        <input type="text" name="name" id="name" required><br>
+        <input type="text" name="nome" id="name" required><br>
 
         <label for="birthdate">Data de nascimento:</label>
-        <input type="date" name="birthdate" id="birthdate" required><br>
+        <input type="date" name="data_nascimento" id="birthdate" required><br>
 
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required><br>

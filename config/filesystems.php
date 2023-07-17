@@ -43,6 +43,34 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        
+        'fotos_tutores' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/fotos_tutores'),
+            'url' => env('APP_URL').'/storage/fotos_tutores',
+            'visibility' => 'public',
+        ],
+        
+        'fotos_alunos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/fotos_alunos'),
+            'url' => env('APP_URL').'/storage/fotos_alunos',
+            'visibility' => 'public',
+        ],
+        
+        'imagens_competicoes' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/imagens_competicoes'),
+            'url' => env('APP_URL').'/storage/imagens_competicoes',
+            'visibility' => 'public',
+        ],
+        
+        'uploads' => [
+            'driver' => 'local',
+            'root' => storage_path('app/uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

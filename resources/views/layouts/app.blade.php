@@ -1,36 +1,105 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/SimboloCCP.png') }}" type="image/png">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <link href="{{ asset('css/fontawesome/css/fontawesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome/css/solid.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome/css/all.css') }}" rel="stylesheet">
+	<!-- Recursos boostrap -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+	<link href="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-1.13.5/datatables.min.css" rel="stylesheet"/>
+	<script src="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-1.13.5/datatables.min.js"></script>
+	<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>SwimManager {{ session('success') }}</title>
+</head>
+<body>
+    @section('menu')
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <header style="vertical-align: middle;">
+        <img src="{{ asset('images/SimboloCCP.png') }}" alt="Logotipo">
+        SwimManager
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+@auth
+	<span class="text-center small float-middle">
+		Utilizador: {{ Auth::user()->name }} | Grupo: {{ Auth::user()->usergroup }}
+	</span>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+        <a href="{{ route('logout') }}" class="btn btn-outline-secondary btn-sm float-right" id="btn-logout" style="margin-top:10px; color: #FFF">Terminar sessão</a>
+ @else
+      <a href="{{ route('login') }}" class="btn btn-outline-secondary btn-sm float-right" id="btn-logout" style="margin-top:10px; color: #FFF"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+@endauth
+    </header>
+
+@auth
+    <nav>
+
+        <ul>
+        <li><a href="pag_ini" class="{{ request()->is('pag_ini') ? 'selected' : '' }}"><i class="fa-solid fa-house"></i> Página Inicial</a></li>
+         @if(Auth::user()->usergroup === 'Administradores')
+            <li><a href="{{ route('tutores.index') }}"  class="{{ request()->is('tutores') ? 'selected' : '' }}"><i class="fa-solid fa-person-chalkboard"></i> Professores</a></li>
+            <li><a href="{{ route('alunos.index') }}" class="{{ request()->is('alunos') ? 'selected' : '' }}"><i class="fa fa-graduation-cap"></i> Alunos</a></li>
+            <li><a href="{{ route('users.index') }}" class="{{ request()->is('users') ? 'selected' : '' }}">  <i class="fa fa-users"></i> Utilizadores</a></li>
+            <li><a href="{{ route('aulas.index') }}" class="{{ request()->is('aulas') ? 'selected' : '' }}"><i class="fa-solid fa-calendar-days"></i> Aulas/Horários</a></li>
+            <li><a href="{{ route('cobrancas.index') }}" class="{{ request()->is('cobrancas') ? 'selected' : '' }}"><i class="fa-solid fa-sack-dollar"></i> Pagamentos</a></li>
+            <li><a href="{{ route('competicoes.index') }}" class="{{ request()->is('competicoes') ? 'selected' : '' }}"><i class="fa-solid fa-trophy"></i> Competições</a></li>
+            <!--
+            <li><a href="dadospessoais" class="{{ request()->is('dadospessoais') ? 'selected' : '' }}">Dados Pessoais</a></li>
+             -->
+
+            @elseif(Auth::user()->usergroup  === 'Tutores')
+            	<li><a href="{{ route('aulas.index') }}" class="{{ request()->is('avaliacao') ? 'selected' : '' }}"><i class="fa-solid fa-person-swimming"></i> Minhas Aulas</a></li>
+
+            @elseif(Auth::user()->usergroup  === 'Alunos')
+            	<li><a href="{{ route('aulasalunos.index') }}" class="{{ request()->is('aulasalunos') ? 'selected' : '' }}"><i class="fa-solid fa-person-swimming"></i> Minhas Aulas</a></li>
+            	<li><a href="{{ route('competicoesalunos.index') }}" class="{{ request()->is('competicoesalunos') ? 'selected' : '' }}"><i class="fa-solid fa-trophy"></i> Minhas Competições</a></li>
+           @endif
+        </ul>
+
+    </nav>
+@endauth
+
+    @show
+
+    <main>
+	<div class="container">
+	@if(session('success'))
+    <div style="
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #155724;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    ">
+        {{ session('success') }}
+    </div>
+@endif
+<hr class="hr shadowed-hr"/>
+        @yield('conteudo')
+
+    </div>
+    </main>
+
+    <footer>
+        Clube de Caça e Pesca de Oliveira do Hospital.
+         | Rua Professor Doutor César de Oliveira, n.º 3, Oliveira do Hospital, Portugal.
+		<a href="mailto:geral@ccpoh.com" style="color:#FFF"> Email: geral@ccpoh.com</a> | Tel: 900 000 007
+
+        <p>&copy; 2023 - Todos os direitos reservados.  </p>
+    </footer>
+
+
+    <script src="{{ asset('js/pagamento.js') }}"></script>
+    <script src="{{ asset('js/projeto.js') }}"></script>
+</body>
 </html>

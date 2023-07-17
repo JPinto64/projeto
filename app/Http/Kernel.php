@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use \App\Http\Middleware\AlunosGroupAccessMiddleware;
 
 class Kernel extends HttpKernel
 {
@@ -63,5 +64,10 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'administradores.group.access' => \App\Http\Middleware\AdministradoresGroupAccessMiddleware::class,
+        'alunos.group.access' => \App\Http\Middleware\AlunosGroupAccessMiddleware::class,
+        'tutores.group.access' => \App\Http\Middleware\TutoresGroupAccessMiddleware::class,
+        
     ];
+
 }

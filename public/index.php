@@ -52,20 +52,18 @@ $kernel = $app->make(Kernel::class);
 
 $response = $kernel->handle(
     $request = Request::capture()
-);
-
-
-
+)->send();
+/*
 // Crie uma instância do controlador
-$controller =new  PersonalDataController('dadospessoa');
+$controller =new  PersonalDataController();
 
 // Chame o método adequado no controlador com base na rota
-if ($request->is('dadospessoa')) {
+if ($request->is('dadospessoais')) {
     $result = $controller->dadospessoa($request);
+
 } else {
     $result = $controller->index($request);
 }
-
-$result->send();
-
+$result->render();
+*/
 $kernel->terminate($request, $response);

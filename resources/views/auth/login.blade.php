@@ -1,10 +1,14 @@
+<!--<div style="height: 100px; width:100%; background-color:blue; background-image: url({{ asset('images/banner.jpeg') }})">-->
+    <!--<img src="../images/banner.jpeg">-->
+<!--</div>-->
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -31,14 +35,19 @@
                 <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
             </label>
         </div>
-
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
+
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('Esqueceu a senha?') }}
                 </a>
             @endif
+<!-- 
+            <x-primary-button class="ml-3">
+                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
 
+            </x-primary-button>
+ -->
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
