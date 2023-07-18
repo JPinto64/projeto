@@ -43,7 +43,15 @@ class UserController extends Controller
         $user->save();
         
         return redirect()->route('users.edit', $user->id)
+<<<<<<< Updated upstream
         ->with('success', 'Usuário criado com successo.')
+=======
+<<<<<<< HEAD
+        ->with('success', 'Utilizador criado com successo.')
+=======
+        ->with('success', 'Usuário criado com successo.')
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         ;
     }
     
@@ -62,7 +70,15 @@ class UserController extends Controller
     public function edit(User $user)
     {
         if (!$user) {
+<<<<<<< Updated upstream
             return redirect()->back()->with('error', 'Usuário não encontrado.');
+=======
+<<<<<<< HEAD
+            return redirect()->back()->with('error', 'Utilizador não encontrado.');
+=======
+            return redirect()->back()->with('error', 'Usuário não encontrado.');
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         }
         
         return view('users.edit', compact('user'));
@@ -73,7 +89,15 @@ class UserController extends Controller
         
         $user->update();
         
+<<<<<<< Updated upstream
         return redirect()->route('users.edit', $user)->with('success', 'Usuário atualizado com sucesso');
+=======
+<<<<<<< HEAD
+        return redirect()->route('users.edit', $user)->with('success', 'Utilizador atualizado com sucesso');
+=======
+        return redirect()->route('users.edit', $user)->with('success', 'Usuário atualizado com sucesso');
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     }
     
     
@@ -84,11 +108,27 @@ class UserController extends Controller
     {
         
         if (!$user) {
+<<<<<<< Updated upstream
             return redirect()->back()->with('error', 'Usuário não encontrado.');
+=======
+<<<<<<< HEAD
+            return redirect()->back()->with('error', 'Utilizador não encontrado.');
+=======
+            return redirect()->back()->with('error', 'Usuário não encontrado.');
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         }
         
         $user->delete();
         
+<<<<<<< Updated upstream
         return redirect()->route('users.index')->with('success', 'Usuário removido com sucesso.');
+=======
+<<<<<<< HEAD
+        return redirect()->route('users.index')->with('success', 'Utilizador removido com sucesso.');
+=======
+        return redirect()->route('users.index')->with('success', 'Usuário removido com sucesso.');
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     }
 }

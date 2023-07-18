@@ -17,11 +17,31 @@ return new class extends Migration
             $table->string('numero')->unique('UK_tutores_numero');
             $table->string('nome')->nullable(false);
             $table->string('nif')->nullable(false);
+<<<<<<< Updated upstream
             $table->string('sexo')->nullable(false);
+=======
+<<<<<<< HEAD
+            $table->string('sexo')->nullable(false);            
+=======
+            $table->string('sexo')->nullable(false);
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             $table->date('datadenascimento')->nullable(false);
             $table->string('linguasfaladas');
             $table->string('bio');
             $table->binary('foto')->nullable();
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            
+            $table->string('email');
+            $table->string('telemovel');
+            $table->string('telemovel2');
+            $table->string('endereco');
+            $table->smallInteger('classificacao');
+            
+=======
+>>>>>>> Stashed changes
 
             $table->string('email');
             $table->string('telemovel');
@@ -29,6 +49,10 @@ return new class extends Migration
             $table->string('endereco');
             $table->smallInteger('classificacao');
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         });
     }
 

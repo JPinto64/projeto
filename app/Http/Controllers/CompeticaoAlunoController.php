@@ -61,7 +61,15 @@ competicoesalunos.id DESC
         CompeticaoAluno::create($data);
         
         return redirect()->route('competicoesalunos.index')
+<<<<<<< Updated upstream
         ->with('success', 'Reservca criada com sucesso.');
+=======
+<<<<<<< HEAD
+        ->with('success', 'Reserca criada com sucesso.');
+=======
+        ->with('success', 'Reservca criada com sucesso.');
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     }
     
     public function edit(CompeticaoAluno $competicaoAluno)
@@ -85,11 +93,31 @@ competicoesalunos.id DESC
         ->with('success', 'Reserva atualizada com sucesso.');
     }
     
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    public function destroy($id)
+    {
+        $competicaoAluno = CompeticaoAluno::find($id);
+        
+        if (!$competicaoAluno) {
+            return redirect()->route('competicoesalunos.index')->with('error', 'Reserva não encontrada.');
+        }
+        
+        $competicaoAluno->delete();
+        
+        return redirect()->route('competicoesalunos.index')->with('success', 'Reserva cancelada com sucesso.');
+=======
+>>>>>>> Stashed changes
     public function destroy(CompeticaoAluno $competicaoAluno)
     {
         $competicaoAluno->delete();
         
         return redirect()->route('competicoesalunos.index')
         ->with('success', 'Reserva removida com sucesso.');
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     }
 }

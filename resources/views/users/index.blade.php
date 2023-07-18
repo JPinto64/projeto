@@ -45,5 +45,12 @@ class="btn btn-primary float-right">
         @endforeach
     </tbody>
 </table>
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 @endsection

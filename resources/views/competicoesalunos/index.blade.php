@@ -49,8 +49,17 @@
     				@method('DELETE')
                 	<i class="fa-regular fa-calendar-check" style="color: green; font-size: 1.2em"></i>
                     |
+<<<<<<< Updated upstream
                 	<input type="hidden" name="id" value="{{$competicao->id}}"/>
                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Cancelar</button>
+=======
+<<<<<<< HEAD
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja cancelar esta reserva?')"><i class="fa fa-trash"></i> Cancelar</button>
+=======
+                	<input type="hidden" name="id" value="{{$competicao->id}}"/>
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Cancelar</button>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
                  </form>
                 @else
                 <form action="{{ route('competicoesalunos.store') }}"  method="POST">

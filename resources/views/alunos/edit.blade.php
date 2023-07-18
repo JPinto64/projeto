@@ -44,7 +44,15 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="numero" class="form-label">Número:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+=======
+    <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         <input type="text" id="numero" name="numero" class="form-control" placeholder="Número" value="{{ $aluno->numero }}" readonly="readonly" />
     </div>
 </div>
@@ -52,24 +60,54 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="nome" class="form-label">Nome:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{ $aluno->nome }}"/>
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{ $aluno->nome }}" required/>
+=======
+    <div class="col-md-8">
+        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{ $aluno->nome }}"/>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 <div class="row form-group">
     <div class="col-md-4 text-right">
         <label for="nif" class="form-label">NIF:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="text" id="nif" name="nif" class="form-control" placeholder="NIF" value="{{ $aluno->nif }}" maxlength="9" />
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="text" id="nif" name="nif" class="form-control" placeholder="NIF" value="{{ $aluno->nif }}" maxlength="9"  required/>
+=======
+    <div class="col-md-8">
+        <input type="text" id="nif" name="nif" class="form-control" placeholder="NIF" value="{{ $aluno->nif }}" maxlength="9" />
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 <div class="row form-group">
     <div class="col-md-4 text-right">
         <label for="sexo" class="form-label">Sexo:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <select id="sexo" name="sexo" class="form-select">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <select id="sexo" name="sexo" class="form-select" required>
+=======
+    <div class="col-md-8">
+        <select id="sexo" name="sexo" class="form-select">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <option value="M" {{ $aluno->sexo === 'M' ? 'selected' : '' }}>Masculino</option>
             <option value="F" {{ $aluno->sexo === 'F' ? 'selected' : '' }}>Feminino</option>
         </select>
@@ -79,8 +117,18 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="datadenascimento" class="form-label">Data de Nascimento:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="date" id="datadenascimento" name="datadenascimento" class="form-control" placeholder="Data de Nascimento" value="{{ $aluno->datadenascimento }}">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="date" id="datadenascimento" name="datadenascimento" class="form-control" placeholder="Data de Nascimento" value="{{ $aluno->datadenascimento }}" required>
+=======
+    <div class="col-md-8">
+        <input type="date" id="datadenascimento" name="datadenascimento" class="form-control" placeholder="Data de Nascimento" value="{{ $aluno->datadenascimento }}">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 </fieldset>
@@ -94,7 +142,15 @@ class="btn btn-danger"
     	<div class="col-md-4 text-right">
     <label for="foto">Foto:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+=======
+    <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     <input type="file" id="foto" name="foto" accept="image/*">
     </div>
   </div>
@@ -106,23 +162,51 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="email" class="form-label">Email:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $aluno->email }}">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $aluno->email }}" required>
+=======
+    <div class="col-md-8">
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $aluno->email }}">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 <div class="row form-group">
     <div class="col-md-4 text-right">
         <label for="telemovel" class="form-label">Telemóvel:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="text" id="telemovel" name="telemovel" class="form-control" placeholder="Telemóvel" maxlength="9" value="{{ $aluno->telemovel }}">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="text" id="telemovel" name="telemovel" class="form-control" placeholder="Telemóvel" maxlength="9" value="{{ $aluno->telemovel }}" required>
+=======
+    <div class="col-md-8">
+        <input type="text" id="telemovel" name="telemovel" class="form-control" placeholder="Telemóvel" maxlength="9" value="{{ $aluno->telemovel }}">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 <div class="row form-group">
     <div class="col-md-4 text-right">
         <label for="telemovel2" class="form-label">Telemóvel 2:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+=======
+    <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         <input type="text" id="telemovel2" name="telemovel2" name="telemovel2" class="form-control" placeholder="Telemóvel 2" maxlength="9" value="{{ $aluno->telemovel2 }}">
     </div>
 </div>
@@ -130,8 +214,18 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="endereco" class="form-label">Endereço:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" value="{{ $aluno->endereco }}">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" value="{{ $aluno->endereco }}" required>
+=======
+    <div class="col-md-8">
+        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" value="{{ $aluno->endereco }}">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     </div>
 </div>
 
@@ -142,16 +236,36 @@ class="btn btn-danger"
         <div class="col-md-4 text-right">
             <label for="data_inscricao" class="form-label">Data de inscrição:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
             <input type="date" id="data_inscricao" name="data_inscricao" class="form-control" placeholder="Data de inscrição" value="{{ $aluno->data_inscricao }}">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+            <input type="date" id="data_inscricao" name="data_inscricao" class="form-control" placeholder="Data de inscrição" value="{{ $aluno->data_inscricao }}" required>
+=======
+        <div class="col-md-8">
+            <input type="date" id="data_inscricao" name="data_inscricao" class="form-control" placeholder="Data de inscrição" value="{{ $aluno->data_inscricao }}">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         </div>
     </div>
 <div class="row form-group">
     <div class="col-md-4 text-right">
         <label for="escalao" class="form-label">Escalão:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <select id="escalao" name="escalao" class="form-select">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <select id="escalao" name="escalao" class="form-select" required>
+=======
+    <div class="col-md-8">
+        <select id="escalao" name="escalao" class="form-select">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <option value="A" {{ $aluno->escalao === 'A' ? 'selected' : '' }}>A</option>
             <option value="B" {{ $aluno->escalao === 'B' ? 'selected' : '' }}>B</option>
             <option value="C" {{ $aluno->escalao === 'C' ? 'selected' : '' }}>C</option>
@@ -164,8 +278,18 @@ class="btn btn-danger"
         <div class="col-md-4 text-right">
             <label for="bio" class="form-label">Necessidades especiais e Observações</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
             <textarea id="observacoes" name="observacoes" class="form-control" placeholder="Necessidades especiais e Observações">{{ $aluno->observacoes }}</textarea>
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+            <textarea id="observacoes" name="observacoes" class="form-control" placeholder="Necessidades especiais e Observações" required>{{ $aluno->observacoes }}</textarea>
+=======
+        <div class="col-md-8">
+            <textarea id="observacoes" name="observacoes" class="form-control" placeholder="Necessidades especiais e Observações">{{ $aluno->observacoes }}</textarea>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         </div>
     </div>
     
@@ -173,8 +297,18 @@ class="btn btn-danger"
     <div class="col-md-4 text-right">
         <label for="estado" class="form-label">Estado:</label>
     </div>
+<<<<<<< Updated upstream
     <div class="col-md-8">
         <select id="estado" name="estado" class="form-select">
+=======
+<<<<<<< HEAD
+    <div class="col-md-6">
+        <select id="estado" name="estado" class="form-select" required>
+=======
+    <div class="col-md-8">
+        <select id="estado" name="estado" class="form-select">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <option value="Ativo" {{ $aluno->estado === 'Ativo' ? 'selected' : '' }}>Ativo</option>
             <option value="Suspenso" {{ $aluno->estado === 'Suspenso' ? 'selected' : '' }}>Suspenso</option>
             <option value="Ferias" {{ $aluno->estado === 'Ferias' ? 'selected' : '' }}>Férias</option>

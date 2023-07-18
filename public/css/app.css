@@ -16,8 +16,18 @@ body {
 		color: #fff;
 		padding: 0 20px;
 		border-bottom: 1px solid #000;
+<<<<<<< Updated upstream
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   		background-image: linear-gradient(to bottom, #306EBF, #1A488B); 
+=======
+<<<<<<< HEAD
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  		background-image: linear-gradient(to bottom, #306EBF, #1A488B);
+=======
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  		background-image: linear-gradient(to bottom, #306EBF, #1A488B); 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
   		z-index: 999;
 	}
 	nav {
@@ -27,7 +37,15 @@ body {
 		height: 100vh;
 		position: fixed;
 		border-right: .5px solid #999;
+<<<<<<< Updated upstream
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+=======
+<<<<<<< HEAD
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+=======
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
   		z-index: 999;
 	}
 	nav ul {
@@ -57,7 +75,15 @@ body {
 	}
 
 	nav ul li{
+<<<<<<< Updated upstream
 	
+=======
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	  border-bottom: 1px solid #CCC;
 	}
@@ -75,12 +101,31 @@ body {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
+<<<<<<< Updated upstream
 		 border-top: 1px solid #ccc;
   box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   padding-top: 20px;
 	}
 	
+=======
+<<<<<<< HEAD
+		border-top: 1px solid #ccc;
+        box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.3);
+        margin-top: 20px;
+        padding-top: 20px;
+        z-index:1000;
+	}
+
+=======
+		 border-top: 1px solid #ccc;
+  box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  padding-top: 20px;
+	}
+	
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 	footer::before {
     content: '';
     display: block;
@@ -103,7 +148,15 @@ footer::after {
     transform: translate(-4%, 40%);
     z-index: -1;
 }
+<<<<<<< Updated upstream
 	
+=======
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 	#logout {
 		float: right;
 		margin: 20px;
@@ -170,10 +223,23 @@ legend {
   background-color: #306EBF;
   padding: 0.75rem;
   font-size: 1.3rem;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  color: #FFF;;
+  transform: translateX(-1.1rem);
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.8);
+
+=======
+>>>>>>> Stashed changes
   color: #FFF;;  
   transform: translateX(-1.1rem);
   box-shadow: -1px 1px 1px rgba(0,0,0,0.8);
   
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 }
 
 legend:after {
@@ -198,8 +264,18 @@ legend:after {
 }
 
 hr{
+<<<<<<< Updated upstream
 	
 	/*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/ 
+=======
+<<<<<<< HEAD
+
+	/*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
+=======
+	
+	/*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/ 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 }
 
 
@@ -219,7 +295,15 @@ a:link#btn-logout{
 }
 
 label{
+<<<<<<< Updated upstream
 	
+=======
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 	font-weight: bold;
 }
 
@@ -229,14 +313,34 @@ label{
   left: 0;
   width: 100%;
   height: 100%;
+<<<<<<< Updated upstream
   background-color: #f0f0f0; 
+=======
+<<<<<<< HEAD
+  background-color: #f0f0f0;
+=======
+  background-color: #f0f0f0; 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+<<<<<<< Updated upstream
   color: #333; 
   font-weight: bold;
   opacity: 0; 
+=======
+<<<<<<< HEAD
+  color: #333;
+  font-weight: bold;
+  opacity: 0;
+=======
+  color: #333; 
+  font-weight: bold;
+  opacity: 0; 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 }
 
 .competicao-image-container {
@@ -252,7 +356,15 @@ label{
 
 ul.list-homepage{
 	list-style-type:disc;
+<<<<<<< Updated upstream
 	
+=======
+<<<<<<< HEAD
+
+=======
+	
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 }
 
 ul.list-homepage li:hover {
@@ -268,4 +380,16 @@ ul.list-homepage li:hover {
   object-position: center;
   height: 50vh;
   overflow: hidden;
+<<<<<<< Updated upstream
 }
+=======
+<<<<<<< HEAD
+}
+
+input[required], select[required], textarea[required] {
+  border: 2px solid #FFDAB9;
+}
+=======
+}
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes

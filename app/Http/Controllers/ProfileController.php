@@ -85,7 +85,15 @@ class ProfileController extends Controller
 
         $dadopessoal->save();
 
+<<<<<<< Updated upstream
         // Redirecione o usuário para uma página de confirmação ou outra página de sua escolha
+=======
+<<<<<<< HEAD
+        // Redirecione o Utilizador para uma página de confirmação ou outra página de sua escolha
+=======
+        // Redirecione o usuário para uma página de confirmação ou outra página de sua escolha
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         return redirect()->route('home')->with('success', 'Dados pessoais salvos com sucesso!');
 
     }

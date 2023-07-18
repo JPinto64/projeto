@@ -44,11 +44,29 @@ class TutorController extends Controller
             'classificacao' => 'required|numeric|min:0|max:5',
             'estado' => 'required|in:Ativo,Suspenso,Ferias,Ausente',
         ]);
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        
+        //gravacao deve ser feita numa transacao para garantir que o utilizador e guardado juntamente com o tutor
+        DB::beginTransaction();
+        
+        try {
+        //gera  novo numero
+        $lastTutor = Tutor::orderBy('id', 'desc')->first();
+        $numero = str_pad($lastTutor ? ($lastTutor->id + 1) : 1, 9, '0', STR_PAD_LEFT);
+        
+=======
+>>>>>>> Stashed changes
 
         //gera  novo numero
         $lastTutor = Tutor::orderBy('id', 'desc')->first();
         $numero = str_pad($lastTutor ? ($lastTutor->id + 1) : 1, 9, '0', STR_PAD_LEFT);
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         $tutor = new Tutor($validatedData);
         $tutor->numero = $numero;
         $tutor->nome = $request->nome;
@@ -63,18 +81,59 @@ class TutorController extends Controller
         $tutor->endereco = $request->endereco;
         $tutor->classificacao = $request->classificacao;
         $tutor->estado = $request->estado;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
             $fotoPath = $foto->store('fotos_tutores', 'public');
             $tutor->foto = $fotoPath;
         }
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         $user = new User();
         $user->name = $numero;
         $user->email = $tutor->email;
         $user->password = $tutor->nif;
         $user->usergroup = 'Tutores';
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        
+        $user->save();
+        
+        $user = DB::table('users')->where('name', $numero)->first();
+        
+        $tutor->user_id = $user->id;
+        
+        $tutor->save();
+        DB::commit();
+        
+        // Redirect or return a response as needed
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of an error
+            DB::rollback();
+            
+            // Handle the error, redirect back, or return an error response
+        }
+        return redirect()->route('tutores.edit', $tutor->id)->with('success', 'Tutor criado com successo.');
+    }
+    
+=======
+>>>>>>> Stashed changes
 
         $user->save();
 
@@ -88,6 +147,10 @@ class TutorController extends Controller
         return redirect()->route('tutores.edit', $tutor->id)->with('success', 'Tutor criado com successo.');
     }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
     /**
      * Display the specified resource.
@@ -105,7 +168,15 @@ class TutorController extends Controller
         if (!$tutor) {
             return redirect()->back()->with('error', 'Tutor não encontrado.');
         }
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         return view('tutores.edit', compact('tutor'));
     }
 
@@ -127,10 +198,23 @@ class TutorController extends Controller
                 'classificacao' => 'required|numeric|min:0|max:5',
                 'estado' => 'required|in:Ativo,Suspenso,Ferias,Ausente',
             ]);
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            
+        
+        $tutor->update($validatedData);
+        
+=======
+>>>>>>> Stashed changes
 
 
         $tutor->update($validatedData);
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
             //$photoPath = $photo->storeAs('fotos_tutores', 'foto.jpg', 'public');
@@ -138,16 +222,46 @@ class TutorController extends Controller
             $tutor->foto = $fotoPath;
             $tutor->save();
         }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        
+        return redirect()->route('tutores.edit', $tutor)->with('success', 'Tutor atualizado com sucesso');
+    }
+    
+=======
+>>>>>>> Stashed changes
 
         return redirect()->route('tutores.edit', $tutor)->with('success', 'Tutor atualizado com sucesso');
     }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Tutor $tutor)
     {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        
+        if (!$tutor) {
+            return redirect()->back()->with('error', 'Tutor não encontrado.');
+        }
+        
+        
+        if ($tutor->foto && Storage::disk('fotos_tutores')->exists($tutor->foto)) {
+            Storage::disk('fotos_tutores')->delete($tutor->foto);
+        }
+        
+        $tutor->delete();
+        
+=======
+>>>>>>> Stashed changes
 
         if (!$tutor) {
             return redirect()->back()->with('error', 'Tutor não encontrado.');
@@ -160,6 +274,10 @@ class TutorController extends Controller
 
         $tutor->delete();
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         return redirect()->route('tutores.index')->with('success', 'Tutor removido com sucesso.');
     }
 }

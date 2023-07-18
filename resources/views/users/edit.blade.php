@@ -27,7 +27,15 @@
 <a href="{{ route('users.destroy', $user->id) }}"
 class="btn btn-danger"
    onclick="event.preventDefault();
+<<<<<<< Updated upstream
             if (confirm('Deseja  remover o usuário {{$user->name}}?')) {
+=======
+<<<<<<< HEAD
+            if (confirm('Deseja  remover o Utilizador {{$user->name}}?')) {
+=======
+            if (confirm('Deseja  remover o usuário {{$user->name}}?')) {
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
                 document.getElementById('delete-form').submit();
             }">
     Remover

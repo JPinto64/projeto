@@ -23,7 +23,15 @@
 </div>
 
 <hr class="hr hr-blurry" />
+<<<<<<< Updated upstream
 <!-- 
+=======
+<<<<<<< HEAD
+<!--
+=======
+<!-- 
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

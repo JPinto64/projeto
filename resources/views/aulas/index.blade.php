@@ -27,14 +27,29 @@ class="btn btn-primary float-right">
 <table class="table table-striped table-bordered table-hover dataTable" id="dataTable">
     <thead>
         <tr>
+<<<<<<< Updated upstream
             <th style="text-align: center;">ID</th>
+=======
+<<<<<<< HEAD
+            <th style="text-align: center;">Número</th>
+=======
+            <th style="text-align: center;">ID</th>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <th style="text-align: center;">Data</th>
             <th style="text-align: center;">Horário</th>
             <th>Local</th>
             <th style="text-align: center;">Escalão</th>
             <th style="text-align: center;">Estado</th>
             <th>Tutor</th>
+<<<<<<< Updated upstream
             <th style="text-align: center;">Ações</th>
+=======
+<<<<<<< HEAD
+=======
+            <th style="text-align: center;">Ações</th>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         </tr>
     </thead>
     <tbody>
@@ -47,6 +62,11 @@ class="btn btn-primary float-right">
                 <td style="text-align: center;">{{ $aula->escalao }}</td>
                 <td style="text-align: center;">{{ $aula->estado }}</td>
                 <td>{{ $aula->tutor->name }}</td>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
                 <td style="text-align: center;">
                     <a href="{{ route('aulas.edit', $aula->id) }}">Editar</a>
                     <form action="{{ route('aulas.destroy', $aula->id) }}" method="POST">
@@ -55,8 +75,19 @@ class="btn btn-primary float-right">
                         <button type="submit">Remover</button>
                     </form>
                 </td>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             </tr>
         @endforeach
     </tbody>
 </table>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 @endsection

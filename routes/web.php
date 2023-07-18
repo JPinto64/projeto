@@ -15,6 +15,15 @@ use App\Http\Controllers\TutorController;
 use App\Http\Controllers\AlunoController;
 use App\Models\Aluno;
 use App\Http\Controllers\CompeticaoAlunoController;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+use  \App\Http\Middleware\TutoresGroupAccessMiddleware;
+use \App\Http\Middleware\AdministradoresGroupAccessMiddleware;
+use App\Http\Controllers\CobrancasAlunoController;
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +68,20 @@ use App\Http\Controllers\CompeticaoAlunoController;
     Route::resource('users', UserController::class)->parameters([
         'users' => 'user',
     ])->middleware('administradores.group.access');
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    
+    Route::resource('aulas', AulaController::class)->parameters([
+        'aulas' => 'aula',
+    ])->middleware([ \App\Http\Middleware\AulasAccessMiddleware::class]);
+    
+    Route::resource('cobrancas', CobrancaController::class)->parameters([
+        'cobrancas' => 'cobranca',
+    ])->middleware('administradores.group.access');
+    
+=======
+>>>>>>> Stashed changes
 
     Route::resource('aulas', AulaController::class)->parameters([
         'aulas' => 'aula',
@@ -69,15 +92,41 @@ use App\Http\Controllers\CompeticaoAlunoController;
         'cobrancas' => 'cobranca',
     ])->middleware('administradores.group.access');
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     Route::resource('competicoes', CompeticaoController::class)->parameters([
         'competicoes' => 'competicao',
     ])->middleware('administradores.group.access');
     ;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 //######################## Alunos
     Route::resource('aulasalunos', AulaAlunoController::class)->parameters([
         'aulasalunos' => 'aulaaluno',
     ])->middleware('alunos.group.access');
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    
+    Route::resource('competicoesalunos', CompeticaoAlunoController::class)->parameters([
+        'competicoesalunos' => 'competicaoaluno',
+    ])->middleware('alunos.group.access');
+    
+    Route::get('/cobrancas-aluno', [CobrancasAlunoController::class, 'index'])->name('cobrancas-aluno')->middleware('alunos.group.access');
+    
+    Route::get('/', [HomePageController::class, 'index']);
+    
+=======
+>>>>>>> Stashed changes
 
     Route::resource('competicoesalunos', CompeticaoAlunoController::class)->parameters([
         'competicoesalunos' => 'competicaoaluno',
@@ -86,6 +135,10 @@ use App\Http\Controllers\CompeticaoAlunoController;
 
     Route::get('/', [HomePageController::class, 'index']);
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
    /* //Pagina inicial redirecionada para formulario de dados pessoais
     Route::get('/', function () {
         return redirect()->route('dadospessoais');

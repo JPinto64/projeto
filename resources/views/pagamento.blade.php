@@ -62,7 +62,15 @@
         }
     </style>
     @if (isset($pagamentos) && $pagamentos->isEmpty())
+<<<<<<< Updated upstream
         <p>Não há pagamentos registrados.</p>
+=======
+<<<<<<< HEAD
+        <p>Não há pagamentos registradosee.</p>
+=======
+        <p>Não há pagamentos registrados.</p>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         @else
         <table>
             <tr>

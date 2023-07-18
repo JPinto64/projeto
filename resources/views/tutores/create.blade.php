@@ -44,7 +44,15 @@
         <div class="col-md-4 text-right">
             <label for="numero" class="form-label">Número:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="numero" name="numero" class="form-control" placeholder="(Gerado automaticamente)" disabled="disabled" value="{{ old('numero') }}">
         </div>
     </div>
@@ -52,7 +60,15 @@
         <div class="col-md-4 text-right">
             <label for="nome" class="form-label">Nome:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{ old('nome') }}">
         </div>
     </div>
@@ -60,7 +76,15 @@
         <div class="col-md-4 text-right">
             <label for="nif" class="form-label">NIF:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="nif" name="nif" class="form-control" placeholder="NIF" maxlength="9" value="{{ old('nif') }}">
         </div>
     </div>
@@ -68,7 +92,15 @@
         <div class="col-md-4 text-right">
             <label for="sexo" class="form-label">Sexo:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <select id="sexo" name="sexo" class="form-select">
                 <option value="M" {{ old('sexo') === 'M' ? 'selected' : '' }}>Masculino</option>
                 <option value="F" {{ old('sexo') === 'F' ? 'selected' : '' }}>Feminino</option>
@@ -79,7 +111,15 @@
         <div class="col-md-4 text-right">
             <label for="datadenascimento" class="form-label">Data de Nascimento:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="date" id="datadenascimento" name="datadenascimento" class="form-control" placeholder="Data de Nascimento" value="{{ old('datadenascimento') }}">
         </div>
     </div>
@@ -91,7 +131,15 @@
         <div class="col-md-4 text-right">
             <label for="foto">Foto:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="file" id="foto" name="foto" accept="image/*">
         </div>
     </div>
@@ -103,7 +151,15 @@
         <div class="col-md-4 text-right">
             <label for="email" class="form-label">Email:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
         </div>
     </div>
@@ -111,7 +167,15 @@
         <div class="col-md-4 text-right">
             <label for="telemovel" class="form-label">Telemóvel:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="telemovel" name="telemovel" class="form-control" placeholder="Telemóvel" maxlength="9" value="{{ old('telemovel') }}">
         </div>
     </div>
@@ -119,7 +183,15 @@
         <div class="col-md-4 text-right">
             <label for="telemovel2" class="form-label">Telemóvel 2:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="telemovel2" name="telemovel2" name="telemovel2" class="form-control" placeholder="Telemóvel 2" maxlength="9" value="{{ old('telemovel2') }}">
         </div>
     </div>
@@ -127,7 +199,15 @@
         <div class="col-md-4 text-right">
             <label for="endereco" class="form-label">Endereço:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" value="{{ old('endereco') }}">
         </div>
     </div>
@@ -139,7 +219,15 @@
         <div class="col-md-4 text-right">
             <label for="linguasfaladas" class="form-label">Línguas Faladas:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" id="linguasfaladas" name="linguasfaladas" class="form-control" placeholder="Línguas Faladas" value="{{ old('linguasfaladas') }}">
         </div>
     </div>
@@ -147,7 +235,15 @@
         <div class="col-md-4 text-right">
             <label for="bio" class="form-label">Bio:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <textarea id="bio" name="bio" class="form-control" placeholder="Bio">{{ old('bio') }}</textarea>
         </div>
     </div>
@@ -155,7 +251,15 @@
         <div class="col-md-4 text-right">
             <label for="classificacao" class="form-label">Classificação:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <select id="classificacao" name="classificacao" class="form-select">
                 <option value="0" {{ old('classificacao') === '0' ? 'selected' : '' }}>0</option>
                 <option value="1" {{ old('classificacao') === '1' ? 'selected' : '' }}>1</option>
@@ -170,7 +274,15 @@
         <div class="col-md-4 text-right">
             <label for="estado" class="form-label">Estado:</label>
         </div>
+<<<<<<< Updated upstream
         <div class="col-md-8">
+=======
+<<<<<<< HEAD
+        <div class="col-md-6">
+=======
+        <div class="col-md-8">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <select id="estado" name="estado" class="form-select">
                 <option value="Ativo" {{ old('estado') === 'Ativo' ? 'selected' : '' }}>Ativo</option>
                 <option value="Suspenso" {{ old('estado') === 'Suspenso' ? 'selected' : '' }}>Suspenso</option>

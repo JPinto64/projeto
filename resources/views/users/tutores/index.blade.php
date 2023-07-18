@@ -24,7 +24,15 @@ class="btn btn-primary float-right">
 </h3>
 
 <hr class="hr hr-blurry shadowed-hr"/>
+<<<<<<< Updated upstream
 <table class="table table-striped table-bordered table-hover " id="dataTable">
+=======
+<<<<<<< HEAD
+<table class="table table-striped table-bordered table-hover dataTable" id="dataTable">
+=======
+<table class="table table-striped table-bordered table-hover " id="dataTable">
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
     <thead>
         <tr>
             <th style="text-align: center;">Numero</th>
@@ -55,6 +63,11 @@ class="btn btn-primary float-right">
         @endforeach
     </tbody>
 </table>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -72,4 +85,8 @@ $(document).ready(function() {
     });
 });
 </script>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 @endsection

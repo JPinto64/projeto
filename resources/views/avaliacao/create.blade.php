@@ -6,7 +6,15 @@
     <form action="{{ route('avaliacao.store') }}" method="POST">
         @csrf
         <div>
+<<<<<<< Updated upstream
             <label for="id_users">ID Usuário:</label>
+=======
+<<<<<<< HEAD
+            <label for="id_users">ID Utilizador:</label>
+=======
+            <label for="id_users">ID Usuário:</label>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
             <input type="text" name="id_users" id="id_users">
         </div>
         <div>

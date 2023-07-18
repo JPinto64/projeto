@@ -110,6 +110,17 @@ ORDER BY aulas.data
         
     }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    public function destroy($id)
+    {
+        $aulaAluno = AulaAluno::find($id);
+        
+        if (!$aulaAluno) {
+            return redirect()->route('aulaalunos.index')->with('error', 'Aluno não encontrado.');
+=======
+>>>>>>> Stashed changes
     /**
      * Remove the specified resource from storage.
      */
@@ -117,12 +128,26 @@ ORDER BY aulas.data
     {
         if (!$aulaAluno) {
             return redirect()->back()->with('error', 'Agendamento nao encontrado.');
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
         }
         
         $aulaAluno->delete();
         
         return redirect()->route('aulasalunos.index')->with('success', 'Agendamento cancelado com sucesso.');
+<<<<<<< Updated upstream
         
     }
     
+=======
+<<<<<<< HEAD
+    }
+=======
+        
+    }
+    
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 }

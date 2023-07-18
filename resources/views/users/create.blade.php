@@ -5,7 +5,15 @@
 @endsection
 @section('conteudo')
 
+<<<<<<< Updated upstream
 <h3 >Novo Usuário
+=======
+<<<<<<< HEAD
+<h3 >Novo Utilizador
+=======
+<h3 >Novo Usuário
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 </h3>
 
 <hr class="hr hr-blurry" />
@@ -56,7 +64,15 @@
             </div>
             <div class="row form-group">
                 <div class="col-md-4 text-right">
+<<<<<<< Updated upstream
                     <label for="usergroup" class="form-label">Grupo do usuário:</label>
+=======
+<<<<<<< HEAD
+                    <label for="usergroup" class="form-label">Grupo do Utilizador:</label>
+=======
+                    <label for="usergroup" class="form-label">Grupo do usuário:</label>
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
                 </div>
                 <div class="col-md-8">
                     <select id="usergroup" name="usergroup" class="form-select" required="required">

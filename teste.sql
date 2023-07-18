@@ -19,6 +19,11 @@
 CREATE DATABASE IF NOT EXISTS `teste` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `teste`;
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 -- A despejar estrutura para tabela teste.alunos
 CREATE TABLE IF NOT EXISTS `alunos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -120,6 +125,10 @@ INSERT INTO `aulasalunos` (`id`, `aula_id`, `aluno_id`, `presente`, `created_at`
 	(3, 21, 3, 0, '2023-07-15 15:11:05', '2023-07-15 15:11:05'),
 	(4, 17, 29, NULL, '2023-07-17 19:18:20', '2023-07-17 19:18:20');
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 -- A despejar estrutura para tabela teste.avaliacao
 CREATE TABLE IF NOT EXISTS `avaliacao` (
   `id_avaliacao` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -138,6 +147,11 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
 
 -- A despejar dados para tabela teste.avaliacao: ~0 rows (aproximadamente)
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 -- A despejar estrutura para tabela teste.cobrancas
 CREATE TABLE IF NOT EXISTS `cobrancas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -188,6 +202,10 @@ INSERT INTO `cobrancas` (`id`, `aluno_id`, `data_cobranca`, `data_limite`, `data
 	(46, 1, '2023-07-12', '2023-07-12 15:42:00', '2023-07-15 15:42:00', 121.00, 0.00, 4.00, 'Propina', '987654325', 'Cheque', 'Pago', '2023-07-14 13:45:30', '2023-07-14 14:20:29'),
 	(47, 29, '2023-07-17', '2023-07-31 22:09:00', '2023-07-18 22:09:00', 100.00, 0.00, 23.00, 'Propina', '987654326', 'dinheiro', 'Nao Pago', '2023-07-17 20:10:07', '2023-07-17 20:10:07');
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 -- A despejar estrutura para tabela teste.competicao
 CREATE TABLE IF NOT EXISTS `competicao` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -198,9 +216,83 @@ CREATE TABLE IF NOT EXISTS `competicao` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- A despejar dados para tabela teste.competicao: ~0 rows (aproximadamente)
+INSERT INTO `competicao` (`id`, `nome_competicao`, `data`, `descricao`, `n_participantes`, `created_at`, `updated_at`) VALUES
+	(1, 'Torneio Municipal', '2023-07-24 16:00:00', 'Podem levar o que quiserem', 15, NULL, NULL),
+	(2, 'Torneio de Verão', '2023-08-20 09:30:00', 'Só é permitido touca', 50, NULL, NULL),
+	(3, 'Torneio Internacional', '2023-10-01 09:30:00', 'Equipas de todo o mundo', 200, NULL, NULL);
+
+-- A despejar estrutura para tabela teste.competicoes
+CREATE TABLE IF NOT EXISTS `competicoes` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `data` date NOT NULL,
+  `hora_inicio` time NOT NULL,
+  `hora_termino` time NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descricao` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `local` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `numero_maximo_participantes` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `estado` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `escaloes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `premiacao` text COLLATE utf8mb4_unicode_ci,
+  `imagem` blob,
+  `observacoes` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.competicoes: ~0 rows (aproximadamente)
+INSERT INTO `competicoes` (`id`, `data`, `hora_inicio`, `hora_termino`, `nome`, `descricao`, `local`, `numero_maximo_participantes`, `estado`, `escaloes`, `premiacao`, `imagem`, `observacoes`, `created_at`, `updated_at`) VALUES
+	(1, '2023-07-20', '09:00:00', '12:00:00', 'Campeonato Regional de Natação', 'Competição Individual', 'Piscina Olímpica de Lisboa', '200', 'Ativa', 'A,B,C,D', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos, 4º lugar: 25 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f4b4578464d6a5072346a666e4f444d72466e4f5571783151315555574d4455304e525946376e46672e6a7067, 'Todos os atletas devem usar touca azul.', NULL, '2023-07-16 17:42:29'),
+	(2, '2023-08-05', '14:30:00', '17:30:00', 'Desafio de Revezamento', 'Competição em Equipes', 'Centro Aquático do Porto', '150', 'Ativa', 'A,B', '1º lugar: 200 pontos, 2º lugar: 150 pontos, 3º lugar: 100 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f3362734f734d63647a5876797a657778446c787a7863536f624758794167786b3645414730514d6b2e6a7067, NULL, NULL, '2023-07-16 16:29:13'),
+	(3, '2023-08-10', '10:00:00', '12:30:00', 'Copa de Natação Infantil', 'Competição para Jovens', 'Piscina Municipal de Braga', '100', 'Ativa', 'C,D', '1º lugar: 75 pontos, 2º lugar: 50 pontos, 3º lugar: 25 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f7277326f3042754d7a7434394555757475304772566a324b53457a75705578366e61746e346f64592e77656270, 'Os atletas devem se apresentar com uniforme do clube.', NULL, '2023-07-16 17:42:52'),
+	(4, '2023-09-15', '08:00:00', '11:00:00', 'Maratona Aquática', 'Competição de Resistência', 'Praia de Cascais', '300', 'Ativa', 'A', '1º lugar: 300 pontos, 2º lugar: 200 pontos, 3º lugar: 100 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f35513842634a794f4d474d53596f4253796d6b58657277734a36666a594d7a4e64616b42415665462e6a7067, NULL, NULL, '2023-07-16 16:20:32'),
+	(5, '2023-09-25', '15:00:00', '18:00:00', 'Torneio de Natação Adaptada', 'Competição para Atletas com Deficiência', 'Escola de Natação de Coimbra', '50', 'Ativa', 'B,D', '1º lugar: Troféu, 2º lugar: Medalha, 3º lugar: Certificado', _binary 0x696d6167656e735f636f6d70657469636f65732f6a6154434b465878364a577a684a3050647254615348726f574475375844535a6447454447524f6e2e77656270, 'Natação assistida permitida.', NULL, '2023-07-16 17:43:21'),
+	(6, '2023-10-05', '16:00:00', '19:00:00', 'Campeonato de Natação Velocista', 'Competição de Velocidade', 'Piscina Olímpica do Algarve', '100', 'Ativa', 'A,C', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f4c4d366e7071314c356b636c447056576f5a48744232575667316a797a41664e393657444a4256502e6a7067, NULL, NULL, '2023-07-16 17:43:46'),
+	(7, '2023-11-10', '10:30:00', '13:30:00', 'Festival de Natação Infantil', 'Competição para Crianças', 'Centro Aquático do Porto', '80', 'Ativa', 'A,D', '1º lugar: Medalha de Ouro, 2º lugar: Medalha de Prata, 3º lugar: Medalha de Bronze', NULL, 'Certificado de Participação para todos os participantes.', NULL, NULL),
+	(8, '2023-11-20', '13:00:00', '16:00:00', 'Campeonato de Natação Juvenil', 'Competição para Adolescentes', 'Piscina Municipal de Lisboa', '120', 'Ativa', 'A,B', '1º lugar: 150 pontos, 2º lugar: 100 pontos, 3º lugar: 50 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f645039684d596842795a6d37694e786b706b4c684255733638447271705471414c744d6f4e5175592e6a7067, NULL, NULL, '2023-07-16 17:53:17'),
+	(9, '2023-12-02', '09:00:00', '12:00:00', 'Desafio de Natação Master', 'Competição para Atletas Master', 'Escola de Natação de Coimbra', '70', 'Ativa', 'C,D', '1º lugar: Troféu, 2º lugar: Medalha, 3º lugar: Certificado', _binary 0x696d6167656e735f636f6d70657469636f65732f385168586e5268473871534c704852543435354f366a796b534e35557a443572325375416c7347652e6a7067, 'Natação assistida permitida.', NULL, '2023-07-16 17:53:49'),
+	(10, '2023-12-15', '11:00:00', '14:00:00', 'Copa de Natação Feminina', 'Competição Exclusiva para Mulheres', 'Piscina Olímpica de Lisboa', '50', 'Ativa', 'A', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f423075305457524e5a64436b753739317a3249634c67494b6f46525075303677675a6935705a6f592e6a7067, 'Vestimenta rosa obrigatória.', NULL, '2023-07-16 16:20:09'),
+	(11, '2024-01-10', '14:30:00', '17:30:00', 'Torneio de Natação Universitária', 'Competição entre Universidades', 'Centro Aquático do Porto', '150', 'Ativa', 'A,B,C,D', '1º lugar: 200 pontos, 2º lugar: 150 pontos, 3º lugar: 100 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f787a71337552334c43477175484e6a66364c6c74354878364c6435796546774175314f576772384c2e6a7067, NULL, NULL, '2023-07-16 17:54:21'),
+	(12, '2024-02-05', '09:30:00', '12:30:00', 'Copa de Natação Escolar', 'Competição para Estudantes', 'Piscina Municipal de Braga', '100', 'Ativa', 'C,D', '1º lugar: Medalha de Ouro, 2º lugar: Medalha de Prata, 3º lugar: Medalha de Bronze', NULL, 'Certificado de Participação para todas as escolas.', NULL, NULL),
+	(13, '2024-03-15', '08:00:00', '12:00:00', 'Maratona Aquática Internacional', 'Competição de Resistência', 'Praia de Cascais', '500', 'Ativa', 'A,B,C', '1º lugar: 500 pontos, 2º lugar: 300 pontos, 3º lugar: 200 pontos', NULL, NULL, NULL, NULL),
+	(14, '2024-03-25', '15:30:00', '18:30:00', 'Torneio de Natação Esportiva', 'Competição para Atletas Profissionais', 'Escola de Natação de Coimbra', '80', 'Ativa', 'B,D', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos', NULL, NULL, NULL, NULL),
+	(15, '2024-04-10', '16:00:00', '19:00:00', 'Campeonato de Natação Velocista', 'Competição de Velocidade', 'Piscina Olímpica do Algarve', '100', 'Ativa', 'A,C', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos', NULL, NULL, NULL, NULL),
+	(16, '2024-04-20', '11:30:00', '14:30:00', 'Festival de Natação Infantil', 'Competição para Crianças', 'Centro Aquático do Porto', '80', 'Ativa', 'A,D', '1º lugar: Medalha de Ouro, 2º lugar: Medalha de Prata, 3º lugar: Medalha de Bronze', NULL, 'Certificado de Participação para todos os participantes.', NULL, NULL),
+	(17, '2024-05-05', '09:30:00', '12:30:00', 'Copa de Natação Juvenil', 'Competição para Adolescentes', 'Piscina Municipal de Lisboa', '120', 'Ativa', 'A,B', '1º lugar: 150 pontos, 2º lugar: 100 pontos, 3º lugar: 50 pontos', NULL, NULL, NULL, NULL),
+	(18, '2024-06-02', '09:00:00', '12:00:00', 'Desafio de Natação Master', 'Competição para Atletas Master', 'Escola de Natação de Coimbra', '70', 'Ativa', 'C,D', '1º lugar: Troféu, 2º lugar: Medalha, 3º lugar: Certificado', NULL, 'Natação assistida permitida.', NULL, NULL),
+	(19, '2024-06-15', '11:00:00', '14:00:00', 'Copa de Natação Feminina', 'Competição Exclusiva para Mulheres', 'Piscina Olímpica de Lisboa', '50', 'Ativa', 'A', '1º lugar: 100 pontos, 2º lugar: 75 pontos, 3º lugar: 50 pontos', NULL, 'Vestimenta rosa obrigatória.', NULL, NULL),
+	(20, '2024-07-10', '14:30:00', '17:30:00', 'Torneio de Natação Universitária', 'Competição entre Universidades', 'Centro Aquático do Porto', '150', 'Ativa', 'A,B,C,D', '1º lugar: 200 pontos, 2º lugar: 150 pontos, 3º lugar: 100 pontos', NULL, NULL, NULL, NULL),
+	(21, '2021-11-20', '10:10:00', '15:10:00', 'Maratona Maritima', 'Corridade a pares', 'Piscina Municipal de Coimbra', '20', 'Ativa', 'B,C', '1o Lugar 10 pontos', _binary 0x696d6167656e735f636f6d70657469636f65732f4863585762706c644f7476505035583959777a3172654642497871677866596e656c6479704d7a6e2e6a7067, 'Observacoes gerais', '2023-07-16 11:51:32', '2023-07-16 18:02:47'),
+	(22, '2023-10-12', '10:00:00', '15:00:00', 'Competicao 38', 'Prova de resistencia', 'Centro Aquatico Dom Carlos', '300', 'Cancelada', 'A,B', 'Nenhum premio', NULL, NULL, '2023-07-16 12:08:24', '2023-07-16 12:43:19'),
+	(23, '2023-07-31', '09:30:00', '12:30:00', 'Competição Nova', 'Vale tudo', 'coimbra', '10', 'Ativa', 'A', NULL, NULL, NULL, '2023-07-16 22:37:49', '2023-07-16 22:37:49');
+
+-- A despejar estrutura para tabela teste.competicoesalunos
+CREATE TABLE IF NOT EXISTS `competicoesalunos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `aluno_id` bigint unsigned NOT NULL,
+  `competicao_id` bigint unsigned NOT NULL,
+  `posicao` int DEFAULT NULL,
+  `pontos_obtidos` int NOT NULL DEFAULT '0',
+  `presente` tinyint(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `competicoesalunos_aluno_id_foreign` (`aluno_id`),
+  KEY `competicoesalunos_competicao_id_foreign` (`competicao_id`),
+  CONSTRAINT `competicoesalunos_aluno_id_foreign` FOREIGN KEY (`aluno_id`) REFERENCES `alunos` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `competicoesalunos_competicao_id_foreign` FOREIGN KEY (`competicao_id`) REFERENCES `competicoes` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.competicoesalunos: ~0 rows (aproximadamente)
+INSERT INTO `competicoesalunos` (`id`, `aluno_id`, `competicao_id`, `posicao`, `pontos_obtidos`, `presente`, `created_at`, `updated_at`) VALUES
+	(1, 3, 21, NULL, 0, NULL, '2023-07-16 17:26:42', '2023-07-16 17:26:42'),
+	(2, 3, 1, NULL, 0, NULL, '2023-07-16 18:01:37', '2023-07-16 18:01:37'),
+	(3, 3, 23, NULL, 0, NULL, '2023-07-16 22:38:54', '2023-07-16 22:38:54'),
+	(4, 29, 1, NULL, 0, NULL, '2023-07-17 19:19:21', '2023-07-17 19:19:21');
 
 -- A despejar estrutura para tabela teste.competicoes
 CREATE TABLE IF NOT EXISTS `competicoes` (
@@ -274,12 +366,15 @@ INSERT INTO `competicoesalunos` (`id`, `aluno_id`, `competicao_id`, `posicao`, `
 
 -- A despejar estrutura para tabela teste.dadoscurriculo
 CREATE TABLE IF NOT EXISTS `dadoscurriculo` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id_user` bigint unsigned DEFAULT NULL,
   `modalidade` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `historico` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_curriculo` (`id_user`),
+  CONSTRAINT `user_curriculo` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- A despejar dados para tabela teste.dadoscurriculo: ~0 rows (aproximadamente)
@@ -287,6 +382,7 @@ CREATE TABLE IF NOT EXISTS `dadoscurriculo` (
 -- A despejar estrutura para tabela teste.dadospessoa
 CREATE TABLE IF NOT EXISTS `dadospessoa` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id_user` bigint unsigned DEFAULT NULL,
   `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `data_nascimento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -294,8 +390,18 @@ CREATE TABLE IF NOT EXISTS `dadospessoa` (
   `cod_postal` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+<<<<<<< HEAD
+  PRIMARY KEY (`id`),
+  KEY `user_pessoa` (`id_user`),
+  CONSTRAINT `user_pessoa` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+=======
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
 -- A despejar dados para tabela teste.dadospessoa: ~0 rows (aproximadamente)
 INSERT INTO `dadospessoa` (`id`, `nome`, `data_nascimento`, `email`, `morada`, `cod_postal`, `created_at`, `updated_at`) VALUES
@@ -329,11 +435,16 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- A despejar estrutura para tabela teste.horario
 CREATE TABLE IF NOT EXISTS `horario` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `data_inicio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_fim` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_user_prof` bigint unsigned NOT NULL,
+  `data_inicio` datetime NOT NULL,
+  `data_fim` datetime NOT NULL,
+  `estado` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `observacao` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_prof` (`id_user_prof`),
+  CONSTRAINT `user_prof` FOREIGN KEY (`id_user_prof`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- A despejar dados para tabela teste.horario: ~0 rows (aproximadamente)
@@ -344,7 +455,15 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+=======
+<<<<<<< HEAD
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
 -- A despejar dados para tabela teste.migrations: ~0 rows (aproximadamente)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -357,6 +476,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(7, '2023_06_12_205806_horario', 1),
 	(8, '2023_06_12_205836_pagamento', 1),
 	(9, '2023_06_12_205843_competicao', 1),
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+	(10, '2023_06_24_162517_participacao', 2),
+	(11, '2023_06_24_175726_avaliacao', 3);
+=======
+>>>>>>> Stashed changes
 	(10, '2023_06_24_162517_participacao', 1),
 	(11, '2023_06_24_175726_avaliacao', 1),
 	(12, '2023_07_08_160953_create_tutores_table', 1),
@@ -370,21 +496,65 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(20, '2023_07_14_163458_create_aula_aluno_table', 1),
 	(21, '2023_07_15_222754_create_competicoes_table', 1),
 	(22, '2023_07_16_135622_create_competicoes_alunos_table', 1);
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
 -- A despejar estrutura para tabela teste.pagamento
 CREATE TABLE IF NOT EXISTS `pagamento` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `data_limite` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `valor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `data_pagamento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `estado_pagamento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ano_propina` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_users` bigint unsigned NOT NULL,
+  `data_limite` date NOT NULL,
+  `valor` float NOT NULL DEFAULT '0',
+  `data_pagamento` date DEFAULT NULL,
+  `estado_pagamento` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Não Pago',
+  `ano_propina` year NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`),
+  KEY `users_pagamento` (`id_users`),
+  CONSTRAINT `users_pagamento` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- A despejar dados para tabela teste.pagamento: ~0 rows (aproximadamente)
+INSERT INTO `pagamento` (`id`, `id_users`, `data_limite`, `valor`, `data_pagamento`, `estado_pagamento`, `ano_propina`, `created_at`, `updated_at`) VALUES
+	(1, 1, '2023-12-31', 10, '2023-06-24', 'Pago', '2023', NULL, NULL),
+	(2, 1, '2024-12-31', 10, NULL, 'Não Pago', '2024', NULL, NULL);
+
+-- A despejar estrutura para tabela teste.participacoes
+CREATE TABLE IF NOT EXISTS `participacoes` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id_users` bigint unsigned NOT NULL,
+  `id_competicao` bigint unsigned NOT NULL,
+  `participa` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_participacoes_competicao` (`id_competicao`),
+  KEY `FK_participacoes_users` (`id_users`),
+  CONSTRAINT `FK_participacoes_competicao` FOREIGN KEY (`id_competicao`) REFERENCES `competicao` (`id`),
+  CONSTRAINT `FK_participacoes_users` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.participacoes: ~0 rows (aproximadamente)
+
+-- A despejar estrutura para tabela teste.participacoes
+CREATE TABLE IF NOT EXISTS `participacoes` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id_users` bigint unsigned NOT NULL,
+  `id_competicao` bigint unsigned NOT NULL,
+  `participa` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `participacoes_id_users_foreign` (`id_users`),
+  KEY `participacoes_id_competicao_foreign` (`id_competicao`),
+  CONSTRAINT `participacoes_id_competicao_foreign` FOREIGN KEY (`id_competicao`) REFERENCES `competicao` (`id`),
+  CONSTRAINT `participacoes_id_users_foreign` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.participacoes: ~0 rows (aproximadamente)
 
 -- A despejar estrutura para tabela teste.participacoes
 CREATE TABLE IF NOT EXISTS `participacoes` (
@@ -491,9 +661,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   `usergroup` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
+<<<<<<< Updated upstream
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- A despejar dados para tabela teste.users: ~0 rows (aproximadamente)
+=======
+<<<<<<< HEAD
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.users: ~0 rows (aproximadamente)
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(1, 'jorge', 'a2017010372@alumni.iscac.pt', NULL, '$2y$10$zVlAwy40FF9mMAiFsh3alufhLPdtnmADV0dRwgj5AKyN5dI8ResnO', NULL, '2023-06-23 13:05:23', '2023-06-23 13:05:23');
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- A despejar dados para tabela teste.users: ~0 rows (aproximadamente)
+>>>>>>> Stashed changes
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `usergroup`) VALUES
 	(1, 'user1', 'user1@gmail.com', NULL, '$2y$10$x7rFPISGJ0jEc4CdrN/x6OCTcqelAt3Eup9YIb1DhxiCG3koyzQEC', NULL, '2023-06-26 14:48:06', '2023-06-26 14:48:06', 'user'),
 	(2, 'user2', 'user2@gmail.com', NULL, '$2y$10$x7rFPISGJ0jEc4CdrN/x6OCTcqelAt3Eup9YIb1DhxiCG3koyzQEC', NULL, '2023-07-08 15:03:02', '2023-07-08 15:03:02', 'user'),
@@ -506,6 +689,10 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 	(29, '000000024', 'a2017010372@alumni.iscac.pt', NULL, '$2y$10$UE/bIJ.855E5F50JNPSEXuEPk.hTbITs6JDIAW3aFUprslk37VTZW', NULL, '2023-07-17 19:15:03', '2023-07-17 19:15:03', 'Alunos'),
 	(32, '000000018', 'a2020130963@alumni.iscac.pt', NULL, '$2y$10$ExJBbqaL1cYYJ7SZSJcUGeA0.CNQg8/6h/26TZzKdNlQlGKvovTbC', NULL, '2023-07-17 19:29:01', '2023-07-17 19:29:01', 'Tutores'),
 	(33, '000000019', 'stelio@gmail.com', NULL, '$2y$10$CUBh2Y.3AzQEeeNSr.AjJe51Z/Ud.8OdL214uar4/zHJqdSGVfEOy', NULL, '2023-07-17 19:31:00', '2023-07-17 19:31:00', 'Tutores');
+<<<<<<< Updated upstream
+=======
+>>>>>>> ef01067c5c1fea83e80d5183b7c2630b344bc5d1
+>>>>>>> Stashed changes
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
